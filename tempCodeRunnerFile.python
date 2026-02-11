@@ -1,0 +1,61 @@
+import turtle
+import math
+
+# ===== Screen Setup =====
+wn = turtle.Screen()
+wn.bgcolor("black")
+wn.title("I ❤️ You Animated Heart")
+
+pen = turtle.Turtle()
+pen.speed(0)
+pen.color("red")
+pen.width(1)
+pen.hideturtle()
+
+text_pen = turtle.Turtle()
+text_pen.hideturtle()
+text_pen.color("white")
+text_pen.penup()
+text_pen.goto(0, -220)
+
+# ===== Heart Points =====
+points = []
+
+for k in range(360):
+    a = math.radians(k)
+
+    x = 16 * (math.sin(a) ** 3)
+    y = (13 * math.cos(a)
+         - 5 * math.cos(2 * a)
+         - 2 * math.cos(3 * a)
+         - math.cos(4 * a))
+
+    points.append((x * 12, y * 12))
+
+# ===== Animation =====
+turtle.tracer(0, 0)
+
+shift = 80
+
+for i in range(len(points) * 3):
+
+    pen.clear()
+    text_pen.clear()
+
+    # draw animated lines
+    for j in range(len(points)):
+        x1, y1 = points[j]
+        x2, y2 = points[(j + shift + i) % len(points)]
+
+        pen.penup()
+        pen.goto(x1, y1)
+        pen.pendown()
+        pen.goto(x2, y2)
+
+    # write text
+    text_pen.write("I ❤️ You", align="center",
+                   font=("Arial", 28, "bold"))
+
+    turtle.update()
+
+turtle.done()
