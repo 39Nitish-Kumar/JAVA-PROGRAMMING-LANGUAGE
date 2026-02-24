@@ -53,6 +53,8 @@ public class pattern {
         */
 
         // Q.3.
+
+        /* 
         // print character pattern
 
         int n = 4;
@@ -67,5 +69,6 @@ public class pattern {
             }
             System.out.println(" ");
         }
+        */
     }
 }
