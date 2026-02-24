@@ -114,7 +114,22 @@ public class javaBasics {
    int a = 10;
    int b = 10;
    System.out.println((a!=b));
-   */
+   
+
+   // swapping
+  int a = 5;
+  int b = 10;
+
+  // swap
+
+  int temp = a;
+  a = b;
+  b = temp;
+
+  System.out.println("a = " + a);
+  System.out.println(" b = " + b);
+
+  */
   
   }    
 }
